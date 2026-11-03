@@ -1,13 +1,36 @@
 package net.montaki;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        Context context = new Context();
-        context.effectuerOperation();
-        context.setStrategy(new StratImp2());
-        context.effectuerOperation();
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Context context = new Context();
+        Scanner scanner = new Scanner(System.in);
+        Map<String, Strategy> strategyMap = new HashMap<>();
+        Strategy strategy;
+
+        while (true) {
+            System.out.println("Entrer la stratégie souhaitée :");
+            String str = scanner.nextLine();
+
+            strategy = strategyMap.get(str);
+
+            if (strategy == null) {
+                System.out.println("Création d'un nouvel objet StrategyImp " + str);
+
+                strategy = (Strategy) Class
+                        .forName("net.montaki.StratImp" + str)
+                        .getConstructor()
+                        .newInstance();
+
+                strategyMap.put(str, strategy);
+            }
+
+            context.setStrategy(strategy);
+        }
     }
 }
