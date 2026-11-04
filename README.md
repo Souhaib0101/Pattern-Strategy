@@ -6,7 +6,7 @@ Implémentation du patron de conception **Strategy** en Java. Ce patron permet d
 
 ## 2. Diagramme de classes
 
-![Diagramme de classes](Pasted%20image%2020261104011018.png)
+![Diagramme de classes](Pasted%20image%2020261104010117.png)
   
 
 Le diagramme présente les relations entre :
