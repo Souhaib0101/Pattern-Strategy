@@ -55,7 +55,7 @@ Le programme utilise une `HashMap<String, Strategy>` pour conserver les instance
 ## 5. Test d'exécution
 
   
-![Test d'exécution](Pasted%20image%2020261104010324.png)
+![Test d'exécution](Pasted%20image%2020261104011018.png)
 
 
 Le test permet de vérifier la création dynamique des stratégies et la réutilisation des instances déjà présentes dans la HashMap.
